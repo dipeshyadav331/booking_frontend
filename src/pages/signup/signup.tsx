@@ -23,7 +23,7 @@ export default function Signup() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/auth/signup', {
+      const response = await fetch('https://booking-backend-9om1.onrender.com/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

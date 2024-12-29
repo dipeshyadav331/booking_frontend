@@ -28,7 +28,7 @@ export default function Train() {
   const fetchSeats = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3000/seats', {
+      const response = await fetch('https://booking-backend-9om1.onrender.com/seats', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -50,11 +50,9 @@ export default function Train() {
 
     // Initial fetch
     fetchSeats();
-
-    // Set up interval for continuous fetching
+ 
     const intervalId = setInterval(fetchSeats, 1500);
-
-    // Cleanup interval on component unmount
+ 
     return () => clearInterval(intervalId);
   }, [navigate]);
 
@@ -66,7 +64,7 @@ export default function Train() {
   const handleReset = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3000/reset', {
+      const response = await fetch('https://booking-backend-9om1.onrender.com/reset', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -97,7 +95,7 @@ export default function Train() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3000/book_seats', {
+      const response = await fetch('https://booking-backend-9om1.onrender.com/book_seats', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
